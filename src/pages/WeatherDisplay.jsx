@@ -1,5 +1,6 @@
 import useWeatherContext from "../hooks/useWeatherContext";
-import ForecastCard from "./ForecastCard";
+import ForecastCard from "../components/ForecastCard";
+import Search from "../components/Search";
 
 const WeatherDisplay = () => {
   // const { weatherData: conditions } = useWeatherContext();
@@ -12,10 +13,14 @@ const WeatherDisplay = () => {
   // }
 
   return (
-    <main className="display">
-      <h2>Current Weather Display</h2>
+    <main>
+      <Search />
 
-      <ForecastCard conditions={weatherData} />
+      <div className="display">
+        <h2>Current Weather Display</h2>
+
+        <ForecastCard conditions={weatherData} />
+      </div>
     </main>
   );
 };

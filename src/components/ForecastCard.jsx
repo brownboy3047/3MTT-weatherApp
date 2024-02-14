@@ -5,6 +5,8 @@
 //     year: "numeric",
 //     weekday: "long",
 
+import { Link } from "react-router-dom";
+
 //     hour: "numeric",
 //     minute: "numeric",
 //     second: "numeric",
@@ -45,6 +47,12 @@ const ForecastCard = ({ conditions }) => {
         </li>
       )}
       {/* <li>{formatDate(conditions.dt)}</li> */}
+
+      {conditions.id && (
+        <Link to={`${conditions.id}`}>
+          <button className="card-btn">Click to check 5 days forecast</button>
+        </Link>
+      )}
     </ul>
   );
 };
